@@ -1,0 +1,254 @@
+
+@font-face {
+    /* Podemos poner cualquier nombre que queramos dentro de font-family */
+    font-family: "mifuente";
+    /* Una vez puesto la url ya podremos utilizar la fuente en otra parte que tenga texto */
+    src: url('BigShouldersStencilText-Black.ttf');
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 5px 10%;
+    background: linear-gradient(
+        90deg,
+        rgba(26, 35, 46, 1) 0%,
+        rgba(25, 36, 46, 1) 29%,
+        rgba(35, 52, 68, 1) 66%,
+        rgba(26, 35, 46, 1) 100%
+      );
+
+}
+
+h1 {
+    font-family: "mifuente";
+    text-align: center;
+}
+
+header{
+    grid-area: a-header;
+    box-shadow: 0 0 50px black;
+    background: linear-gradient(
+        90deg,
+        rgba(26, 35, 46, 1) 0%,
+        rgba(25, 36, 46, 1) 29%,
+        rgba(35, 52, 68, 1) 66%,
+        rgba(26, 35, 46, 1) 100%
+      );
+
+    
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+ 
+}
+
+
+
+header nav a{
+    display: inline-block;
+    width: 25%;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.item-menu{
+    position: relative;
+}
+
+.submenu {
+    border: solid 1px #cccccc;
+    padding: 10px;
+    width: 200px;
+    background-color:rgba(27,37,48,.85);
+
+
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.item-menu:hover .submenu{
+    display: block;
+}
+
+.submenu a{
+    display: block;
+}
+
+section {
+    grid-area: a-destacado;
+    display: flex;
+    text-align: left;
+
+    box-sizing: border-box;
+    width: 50%;
+    color: rgba(27,37,48,.85);
+    border: solid 1px #000000;
+    width: 100%;
+    min-height: 200px;
+}
+
+article.destacado {
+    grid-area: destacado;
+    color: white;
+    
+    box-shadow: 0px 0px 70px rgba(102, 102, 102, 0.2);
+    background-image: url("../img/cover-2.png");
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+}
+
+article.destacado .box-foto {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+article.destacado .box-foto a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.destacado .titulo a {
+    color: #fff;
+}
+
+.destacado .titulo::after{
+    content: "";
+    margin: 0.625em 0;
+    display: block;
+    background-color: #868686;
+    width: 6em;
+    height: 1px;
+}
+
+
+/* aside {
+    grid-area: a-aside;
+} */
+
+main {
+    grid-area: a-main;
+}
+
+main #grid-container-1 {
+    display: grid;
+    /* esto quiere decir para que coja el mismo tamaño y cogera todo lo que pueda*/
+    /* son 4 colomnas por cada auto que haya */
+    grid-template-columns: auto auto auto auto; 
+    gap: 20px;
+    margin: auto;
+    width: 80%;
+
+}
+
+/* La caja de de todas los div */
+
+#grid-container div h3{
+    color: rgb(0, 7, 1);
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* la caja de todas las fotos de img */
+#grid-container img {
+    width: 183px;
+    box-shadow: 0 0 100000000px rgba(0, 0, 0, 0.7);
+}
+
+/* hover es para marcar los enlaces cuando pasa por encima */
+#grid-container img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* es cuando pasamos por encima del raton cambia */
+    cursor: pointer;
+}
+
+
+
+/* main h2 {
+    background-color: var(--fondo);
+} */
+
+footer {
+    grid-area: a-footer;
+    background: linear-gradient(
+        90deg,
+        rgba(26, 35, 46, 1) 0%,
+        rgba(25, 36, 46, 1) 29%,
+        rgba(35, 52, 68, 1) 66%,
+        rgba(26, 35, 46, 1) 100%
+      );
+    
+}
+
+footer p{
+    font-size: 160X;
+}
+
+#grid-container{
+
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a-header    a-header    a-header"
+    "a-destacado a-destacado a-destacado"
+    
+    "a-main      a-main      a-main"
+    "a-footer    a-footer    a-footer"
+    ;
+}
+
+main, footer, section {
+    border: solid 1px #000000;
+    
+    width: 100%;
+    min-height: 200px;
+    
+}
+
+main{
+    min-height: 400px;
+}
+
+@media (max-width: 1600px){
+    body {
+        font-size: 24px;
+        
+    }
+}
+
+
+@media (max-width:500px){
+
+    body {
+        font-size: 24px;
+        background-color: brown;
+    }
+
+
+    #grid-container{
+        
+        grid-template-areas: 
+        "a-header    a-header    a-header"
+        "a-destacado a-destacado a-destacado"
+        "a-main      a-main      a-main"
+        "a-aside      a-aside      a-aside"
+        "a-footer    a-footer    a-footer"
+        ; 
+    }
+}
